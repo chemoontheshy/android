@@ -9,19 +9,26 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btntoTextView;
+    private Button btn_toTextView,btn_toButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btntoTextView = (Button) findViewById(R.id.toTextView);
-        btntoTextView.setOnClickListener(new View.OnClickListener() {
+        btn_toTextView = findViewById(R.id.toTextView);
+        btn_toTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
                 startActivity(intent);
+            }
+        });
+        btn_toButton = findViewById(R.id.toButton);
+        btn_toButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,)
             }
         });
 

@@ -15,7 +15,7 @@ public class TextViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_view);
-        mTv4 = (TextView) findViewById(R.id.tv_4);
+        mTv4 = findViewById(R.id.tv_4);
         mTv4.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         mTv4.getPaint().setAntiAlias(true);
         mTv5 = findViewById(R.id.tv_5);
