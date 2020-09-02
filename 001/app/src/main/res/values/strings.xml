@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">a001</string>
+    <string name="btn_toTextview">textView</string>
+    <string name="btn_toTextView">TextViwe</string>
+    <string name="tv_1">我是一个测试的普通textView</string>
+    <string name="tv_2">我是显示不全的</string>
+    <string name="tv_3">筛选</string>
+    <string name="tv_4">下划线</string>
+    <string name="tv_5">下划线</string>
+    <string name="tv_7">跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯</string>
 </resources>
