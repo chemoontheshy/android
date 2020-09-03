@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    >
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorOrange"
+        android:hint="@string/et_username_p"
+        android:background="@drawable/bg_et1"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/username"
+        android:paddingLeft="10dp"
+        />
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorOrange"
+        android:hint="@string/et_password_p"
+        android:inputType="textPassword"
+        android:background="@drawable/bg_et1"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/password"
+        android:paddingLeft="10dp"
+        />
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorOrange"
+        android:hint="@string/et_phone_p"
+        android:inputType="phone"
+        android:background="@drawable/bg_et1"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/phone"
+        android:paddingLeft="10dp"
+        />
+
+    <Button
+        android:id="@+id/et_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_btn4"
+        android:layout_marginTop="30dp"
+        android:textSize="24sp"
+        android:textColor="#fff"
+        android:text="@string/et_login" />
+
+
+
+
+
+</LinearLayout>

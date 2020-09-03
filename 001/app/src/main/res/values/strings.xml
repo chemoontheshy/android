@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">a001</string>
-    <string name="btn_toTextview">textView</string>
     <string name="btn_toTextView">TextViwe</string>
     <string name="tv_1">我是一个测试的普通textView</string>
     <string name="tv_2">我是显示不全的</string>
@@ -9,4 +8,13 @@
     <string name="tv_5">下划线</string>
     <string name="tv_7">跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯</string>
     <string name="btn_toButton">Button</string>
+    <string name="btn_1">普通按钮</string>
+    <string name="btn_2">圆角按钮</string>
+    <string name="btn_3">描边按钮</string>
+    <string name="btn_4">阴影按钮</string>
+    <string name="btn_EditText">Eidttext</string>
+    <string name="et_username_p">用户名</string>
+    <string name="et_password_p">密码</string>
+    <string name="et_phone_p">手机号</string>
+    <string name="et_login">登录</string>
 </resources>
