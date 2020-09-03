@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/cb_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cb_title"
+        android:textSize="20sp"
+        android:textColor="#000" />
+
+    <CheckBox
+        android:id="@+id/cb_skill_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cb_skill_1"
+        android:textSize="20sp"
+        android:layout_below="@id/cb_title"
+        android:layout_marginTop="20dp" />
+    <CheckBox
+        android:id="@+id/cb_skill_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cb_skill_2"
+        android:textSize="20sp"
+        android:layout_below="@id/cb_skill_1"
+        android:layout_marginTop="10dp" />
+    <CheckBox
+        android:id="@+id/cb_skill_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cb_skill_3"
+        android:textSize="20sp"
+        android:layout_below="@id/cb_skill_2"
+        android:layout_marginTop="10dp" />
+    <CheckBox
+        android:id="@+id/cb_skill_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cb_skill_4"
+        android:textSize="20sp"
+        android:layout_below="@id/cb_skill_3"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/cb_skill_4"
+        android:layout_marginTop="20dp" >
+
+        <TextView
+            android:id="@+id/cb_interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_interest"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp"
+            android:textColor="#000"/>
+
+        <CheckBox
+            android:id="@+id/cb_interest_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:button="@drawable/bg_checkbox"
+            android:padding="5dp"
+            android:text="@string/cb_interest_1" />
+        <CheckBox
+            android:id="@+id/cb_interest_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:button="@drawable/bg_checkbox"
+            android:paddingLeft="5dp"
+            android:text="@string/cb_interest_2" />
+    </LinearLayout>
+
+
+</RelativeLayout>

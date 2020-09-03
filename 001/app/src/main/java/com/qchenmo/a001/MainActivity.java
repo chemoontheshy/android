@@ -10,38 +10,69 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_toTextView,btn_toButton,btn_toEditText;
+    private Button btn_toTextView,btn_toButton,btn_toEditText,btn_toRadio,btn_toCheckBox,btn_toImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //功能界面
         btn_toTextView = findViewById(R.id.toTextView);
-        btn_toTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
-                startActivity(intent);
-            }
-        });
         btn_toButton = findViewById(R.id.toButton);
-        btn_toButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ButtonActivity.class);
-                startActivity(intent);
-            }
-        });
         btn_toEditText = findViewById(R.id.toEditText);
-        btn_toEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //跳转到EditText演示界面
-                Intent intent = new Intent(MainActivity.this,EditTextActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        btn_toRadio = findViewById(R.id.toRadio);
+        btn_toCheckBox = findViewById(R.id.toCheckBox);
+        btn_toImageView = findViewById(R.id.toImageView);
+        setListeners();
     }
+
+    private void setListeners(){
+        Onclick onclick = new Onclick();
+        btn_toTextView.setOnClickListener(onclick);
+        btn_toButton.setOnClickListener(onclick);
+        btn_toEditText.setOnClickListener(onclick);
+        btn_toRadio.setOnClickListener(onclick);
+        btn_toCheckBox.setOnClickListener(onclick);
+        btn_toImageView.setOnClickListener(onclick);
+    }
+
+    private class Onclick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Intent intent;
+            switch (v.getId()){
+
+                case R.id.toTextView:
+                    //跳转到Text演示界面
+                    intent = new Intent(MainActivity.this,TextViewActivity.class);
+                    break;
+                case R.id.toButton:
+                    //跳转到Button演示界面
+                    intent = new Intent(MainActivity.this,ButtonActivity.class);
+                    break;
+                case R.id.toEditText:
+                    //跳转到EditText演示界面
+                    intent = new Intent(MainActivity.this,EditTextActivity.class);
+                    break;
+                case R.id.toRadio:
+                    //跳转到Radio演示界面
+                    intent = new Intent(MainActivity.this,RadioActivity.class);
+                    break;
+                case R.id.toCheckBox:
+                    //跳转到Radio演示界面
+                    intent = new Intent(MainActivity.this,CheckBoxActivity.class);
+                    break;
+                case R.id.toImageView:
+                    //跳转到Radio演示界面
+                    intent = new Intent(MainActivity.this,ImageViewActivity.class);
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + v.getId());
+            }
+            startActivity(intent);
+        }
+    }
+
 }

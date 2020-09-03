@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".EditTextActivity"></activity>
+        <activity android:name=".ImageViewActivity"></activity>
+        <activity android:name=".CheckBoxActivity" />
+        <activity android:name=".RadioActivity" />
+        <activity android:name=".EditTextActivity" />
         <activity android:name=".ButtonActivity" />
         <activity android:name=".TextViewActivity" />
         <activity android:name=".MainActivity">

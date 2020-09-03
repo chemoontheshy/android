@@ -24,5 +24,23 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_EditText"
         android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/toRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_Radio"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/toCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_CheckBox"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/toImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_ImageView"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

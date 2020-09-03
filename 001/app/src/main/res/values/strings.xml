@@ -17,4 +17,17 @@
     <string name="et_password_p">密码</string>
     <string name="et_phone_p">手机号</string>
     <string name="et_login">登录</string>
+    <string name="btn_Radio">Radio</string>
+    <string name="radio_man">男</string>
+    <string name="radio_woman">女</string>
+    <string name="btn_CheckBox">CheckBox</string>
+    <string name="cb_title">你会那些移动开发：</string>
+    <string name="cb_skill_1">Android</string>
+    <string name="cb_skill_2">ios</string>
+    <string name="cb_skill_3">HTML5</string>
+    <string name="cb_skill_4">其他</string>
+    <string name="cb_interest">你的兴趣:</string>
+    <string name="cb_interest_1">番剧</string>
+    <string name="cb_interest_2">编程</string>
+    <string name="btn_ImageView">ImageView</string>
 </resources>
