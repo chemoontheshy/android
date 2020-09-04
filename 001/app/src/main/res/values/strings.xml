@@ -30,4 +30,9 @@
     <string name="cb_interest_1">番剧</string>
     <string name="cb_interest_2">编程</string>
     <string name="btn_ImageView">ImageView</string>
+    <string name="btn_ListView">ListView</string>
+    <string name="Hello">Hello</string>
+    <string name="data">2020-9-4</string>
+    <string name="content">这是内容</string>
+    <string name="btn_GridView">GridView</string>
 </resources>

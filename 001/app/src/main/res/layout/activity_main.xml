@@ -42,5 +42,18 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_ImageView"
         android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/toListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_ListView"
+        android:textAllCaps="false"/>
+    android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/toGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_GridView"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

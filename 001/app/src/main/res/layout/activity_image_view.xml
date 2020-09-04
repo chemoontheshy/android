@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:padding="15dp">
+    <!--fitXY:撑满控件，宽高比可能发生改变-->
+    <!--fitCenter:保持宽高比直到能够完全显示-->
+    <!--centerCrop:保持宽高比缩放，直到完全覆盖控件，裁剪显示-->
     <ImageView
+        android:id="@+id/local_png"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:background="@color/colorOrange"
-        android:src="@drawable/bg_z_logo" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_z_logo"
+        />
+    <ImageView
+        android:id="@+id/web_img"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:background="@color/colorOrange"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/local_png"
+        android:layout_marginTop="20dp"
+        />
 
 </RelativeLayout>
