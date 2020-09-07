@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         btn_toCheckBox.setOnClickListener(onclick);
         btn_toImageView.setOnClickListener(onclick);
         btn_toListView.setOnClickListener(onclick);
+        btn_toGridView.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener{
