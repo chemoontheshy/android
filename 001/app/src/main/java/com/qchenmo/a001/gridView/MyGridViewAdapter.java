@@ -1,4 +1,4 @@
-package com.qchenmo.a001.gridview;
+package com.qchenmo.a001.gridView;
 
 import android.content.Context;
 import android.view.LayoutInflater;

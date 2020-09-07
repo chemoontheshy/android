@@ -6,16 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ListView;
 
-import com.qchenmo.a001.gridview.GridViewActivity;
+import com.qchenmo.a001.gridView.GridViewActivity;
 import com.qchenmo.a001.listview.ListViewActivity;
+import com.qchenmo.a001.recyclerView.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_toTextView,btn_toButton,btn_toEditText,btn_toRadio,btn_toCheckBox,btn_toImageView,btn_toListView,btn_toGridView;
+    private Button btn_toTextView,btn_toButton,btn_toEditText,btn_toRadio,btn_toCheckBox,btn_toImageView,btn_toListView,btn_toGridView,btn_toRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btn_toImageView = findViewById(R.id.toImageView);
         btn_toListView = findViewById(R.id.toListView);
         btn_toGridView = findViewById(R.id.toGridView);
+        btn_toRecyclerView = findViewById(R.id.toRecyclerView);
         setListeners();
     }
 
@@ -44,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         btn_toImageView.setOnClickListener(onclick);
         btn_toListView.setOnClickListener(onclick);
         btn_toGridView.setOnClickListener(onclick);
+        btn_toRecyclerView.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener{
@@ -70,20 +70,24 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this,RadioActivity.class);
                     break;
                 case R.id.toCheckBox:
-                    //跳转到Radio演示界面
+                    //跳转到CheckBox演示界面
                     intent = new Intent(MainActivity.this,CheckBoxActivity.class);
                     break;
                 case R.id.toImageView:
-                    //跳转到Radio演示界面
+                    //跳转到ImageView演示界面
                     intent = new Intent(MainActivity.this,ImageViewActivity.class);
                     break;
                 case R.id.toListView:
-                    //跳转到Radio演示界面
+                    //跳转到ListView演示界面
                     intent = new Intent(MainActivity.this, ListViewActivity.class);
                     break;
                 case R.id.toGridView:
-                    //跳转到Radio演示界面
+                    //跳转到GridView演示界面
                     intent = new Intent(MainActivity.this, GridViewActivity.class);
+                    break;
+                case R.id.toRecyclerView:
+                    //跳转到RecyclerView演示界面
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + v.getId());

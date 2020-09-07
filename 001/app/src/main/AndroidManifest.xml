@@ -3,9 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.qchenmo.a001">
 
-    <!--    //权限-->
-    <!--    //网络权限-->
-    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".gridview.GridViewActivity" />
+        <activity android:name=".recyclerView.PuRecyclerViewActivity"></activity>
+        <activity android:name=".recyclerView.HorRecyclerViewActivity" />
+        <activity android:name=".recyclerView.LinearRecyclerViewActivity" />
+        <activity android:name=".recyclerView.RecyclerViewActivity" />
+        <activity android:name=".gridView.GridViewActivity" />
         <activity android:name=".listview.ListViewActivity" />
         <activity android:name=".ImageViewActivity" />
         <activity android:name=".CheckBoxActivity" />
@@ -30,5 +31,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

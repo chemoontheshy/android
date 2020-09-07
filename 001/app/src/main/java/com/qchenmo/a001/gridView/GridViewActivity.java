@@ -1,4 +1,4 @@
-package com.qchenmo.a001.gridview;
+package com.qchenmo.a001.gridView;
 
 import android.os.Bundle;
 import android.view.View;

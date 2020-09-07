@@ -35,4 +35,9 @@
     <string name="data">2020-9-4</string>
     <string name="content">这是内容</string>
     <string name="btn_GridView">GridView</string>
+    <string name="ScrollView">ScrollView</string>
+    <string name="btn_linearView">列表视图</string>
+    <string name="btn_RecyclerView">RecyclerView</string>
+    <string name="btn_horizontalView">水平滚动</string>
+    <string name="PuRecyclerView">瀑布流</string>
 </resources>
