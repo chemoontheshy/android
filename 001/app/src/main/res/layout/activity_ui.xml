@@ -93,6 +93,12 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_Progress"
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/toCustomDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_CustomDialog"
+            android:textAllCaps="false"/>
 
 <!--        测试 ScrollView-->
 <!--        <Button-->

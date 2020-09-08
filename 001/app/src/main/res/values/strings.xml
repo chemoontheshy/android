@@ -58,4 +58,11 @@
     <string name="pdBegin">模拟进度条</string>
     <string name="ProgressDialog1">ProgressDialog1</string>
     <string name="ProgressDialog2">ProgressDialog2</string>
+    <string name="btn_CustomDialog">CustomDialog</string>
+    <string name="customDialog">自定义Dialog</string>
+    <string name="Tip">提示</string>
+    <string name="del">删除？</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="message">删除？</string>
 </resources>
