@@ -14,7 +14,7 @@ import com.qchenmo.a001.recyclerView.RecyclerViewActivity;
 public class UiActivity extends AppCompatActivity {
 
     private Button btn_toTextView,btn_toButton,btn_toEditText,btn_toRadio,btn_toCheckBox,btn_toImageView,btn_toListView,btn_toGridView,btn_toRecyclerView;
-    private Button btn_toWebView,btn_toToast,btn_toDialog;
+    private Button btn_toWebView,btn_toToast,btn_toDialog,btn_toProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,7 @@ public class UiActivity extends AppCompatActivity {
         btn_toWebView  = findViewById(R.id.toWebView);
         btn_toToast = findViewById(R.id.toToast);
         btn_toDialog = findViewById(R.id.toDialog);
+        btn_toProgress = findViewById(R.id.toProgress);
         setListeners();
     }
 
@@ -50,6 +51,7 @@ public class UiActivity extends AppCompatActivity {
         btn_toWebView.setOnClickListener(onclick);
         btn_toToast.setOnClickListener(onclick);
         btn_toDialog.setOnClickListener(onclick);
+        btn_toProgress.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener{
@@ -106,6 +108,10 @@ public class UiActivity extends AppCompatActivity {
                 case R.id.toDialog:
                     //跳转到toToast演示界面
                     intent = new Intent(UiActivity.this, DialogActivity.class);
+                    break;
+                case R.id.toProgress:
+                    //跳转到toToast演示界面
+                    intent = new Intent(UiActivity.this, ProgressActivity.class);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + v.getId());

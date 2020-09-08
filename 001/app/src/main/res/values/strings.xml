@@ -54,4 +54,8 @@
     <string name="style3">style3</string>
     <string name="style2">style2</string>
     <string name="style5">style5</string>
+    <string name="btn_Progress">Progress</string>
+    <string name="pdBegin">模拟进度条</string>
+    <string name="ProgressDialog1">ProgressDialog1</string>
+    <string name="ProgressDialog2">ProgressDialog2</string>
 </resources>
