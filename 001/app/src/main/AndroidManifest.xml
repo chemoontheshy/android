@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".recyclerView.PuRecyclerViewActivity"></activity>
+        <activity android:name=".ToastActivity"></activity>
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".recyclerView.PuRecyclerViewActivity" />
         <activity android:name=".recyclerView.HorRecyclerViewActivity" />
         <activity android:name=".recyclerView.LinearRecyclerViewActivity" />
         <activity android:name=".recyclerView.RecyclerViewActivity" />

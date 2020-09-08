@@ -40,4 +40,9 @@
     <string name="btn_RecyclerView">RecyclerView</string>
     <string name="btn_horizontalView">水平滚动</string>
     <string name="PuRecyclerView">瀑布流</string>
+    <string name="btn_WebView">WebView</string>
+    <string name="btn_Toast">Toast</string>
+    <string name="moren">默认</string>
+    <string name="changeLocation">改变位置</string>
+    <string name="toastImg">自定义图片</string>
 </resources>

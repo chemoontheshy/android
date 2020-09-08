@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 
 import com.qchenmo.a001.gridView.GridViewActivity;
@@ -14,7 +15,7 @@ import com.qchenmo.a001.recyclerView.RecyclerViewActivity;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_toTextView,btn_toButton,btn_toEditText,btn_toRadio,btn_toCheckBox,btn_toImageView,btn_toListView,btn_toGridView,btn_toRecyclerView;
-
+    private Button btn_toWebView,btn_toToast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         btn_toListView = findViewById(R.id.toListView);
         btn_toGridView = findViewById(R.id.toGridView);
         btn_toRecyclerView = findViewById(R.id.toRecyclerView);
+        btn_toWebView  = findViewById(R.id.toWebView);
+        btn_toToast = findViewById(R.id.toToast);
         setListeners();
     }
 
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         btn_toListView.setOnClickListener(onclick);
         btn_toGridView.setOnClickListener(onclick);
         btn_toRecyclerView.setOnClickListener(onclick);
+        btn_toWebView.setOnClickListener(onclick);
+        btn_toToast.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener{
@@ -88,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.toRecyclerView:
                     //跳转到RecyclerView演示界面
                     intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                    break;
+                case R.id.toWebView:
+                    //跳转到toWebView演示界面
+                    intent = new Intent(MainActivity.this, WebViewActivity.class);
+                    break;
+                case R.id.toToast:
+                    //跳转到toToast演示界面
+                    intent = new Intent(MainActivity.this, ToastActivity.class);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + v.getId());
