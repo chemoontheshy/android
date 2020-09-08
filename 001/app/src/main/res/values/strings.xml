@@ -45,4 +45,13 @@
     <string name="moren">默认</string>
     <string name="changeLocation">改变位置</string>
     <string name="toastImg">自定义图片</string>
+    <string name="toToastUtil">ToastUtil</string>
+    <string name="btn_dialog">Dialog</string>
+    <string name="UI">UI</string>
+    <string name="Ui">UI</string>
+    <string name="style1">style1</string>
+    <string name="style4">style4</string>
+    <string name="style3">style3</string>
+    <string name="style2">style2</string>
+    <string name="style5">style5</string>
 </resources>

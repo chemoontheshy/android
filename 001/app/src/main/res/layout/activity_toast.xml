@@ -22,5 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/toastImg" />
+    <Button
+        android:id="@+id/btn_toast_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/toToastUtil" />
 
 </LinearLayout>
