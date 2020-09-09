@@ -65,4 +65,9 @@
     <string name="cancel">取消</string>
     <string name="confirm">确定</string>
     <string name="message">删除？</string>
+    <string name="btn_PopupWindow">PopupWindow</string>
+    <string name="Pop">Pop</string>
+    <string name="good">好</string>
+    <string name="pop_not_good">一般</string>
+    <string name="bad">不好</string>
 </resources>

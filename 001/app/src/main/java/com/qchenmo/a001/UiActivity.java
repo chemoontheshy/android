@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupWindow;
 
 import com.qchenmo.a001.gridView.GridViewActivity;
 import com.qchenmo.a001.listview.ListViewActivity;
@@ -14,7 +15,7 @@ import com.qchenmo.a001.recyclerView.RecyclerViewActivity;
 public class UiActivity extends AppCompatActivity {
 
     private Button btn_toTextView,btn_toButton,btn_toEditText,btn_toRadio,btn_toCheckBox,btn_toImageView,btn_toListView,btn_toGridView,btn_toRecyclerView;
-    private Button btn_toWebView,btn_toToast,btn_toDialog,btn_toProgress,btn_toCustomDialog;
+    private Button btn_toWebView,btn_toToast,btn_toDialog,btn_toProgress,btn_toCustomDialog,btn_toPopupWindow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class UiActivity extends AppCompatActivity {
         btn_toDialog = findViewById(R.id.toDialog);
         btn_toProgress = findViewById(R.id.toProgress);
         btn_toCustomDialog = findViewById(R.id.toCustomDialog);
+        btn_toPopupWindow = findViewById(R.id.toPopupWindow);
         setListeners();
     }
 
@@ -54,6 +56,7 @@ public class UiActivity extends AppCompatActivity {
         btn_toDialog.setOnClickListener(onclick);
         btn_toProgress.setOnClickListener(onclick);
         btn_toCustomDialog.setOnClickListener(onclick);
+        btn_toPopupWindow.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener{
@@ -118,6 +121,10 @@ public class UiActivity extends AppCompatActivity {
                 case R.id.toCustomDialog:
                     //跳转到toToast演示界面
                     intent = new Intent(UiActivity.this, CustomDialogActivity.class);
+                    break;
+                case R.id.toPopupWindow:
+                    //跳转到toToast演示界面
+                    intent = new Intent(UiActivity.this, PopupWindowActivity.class);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + v.getId());

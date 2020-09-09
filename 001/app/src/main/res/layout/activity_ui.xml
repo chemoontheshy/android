@@ -99,6 +99,12 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_CustomDialog"
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/toPopupWindow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_PopupWindow"
+            android:textAllCaps="false"/>
 
 <!--        测试 ScrollView-->
 <!--        <Button-->
