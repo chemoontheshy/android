@@ -70,4 +70,7 @@
     <string name="good">好</string>
     <string name="pop_not_good">一般</string>
     <string name="bad">不好</string>
+    <string name="Activity">Activity</string>
+    <string name="Jump">Jump</string>
+    <string name="jump_toB">jumpToB</string>
 </resources>

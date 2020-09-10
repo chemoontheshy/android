@@ -11,7 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".PopupWindowActivity"></activity>
+        <activity android:name=".jump.BActivity"
+            android:label="B">
+            <intent-filter>
+                <action android:name="com.qchenmo.test.BActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".jump.AActivity"
+            android:label="A"/>
+        <activity android:name=".LifeCycleActivity" />
+        <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />
         <activity android:name=".MainActivity">

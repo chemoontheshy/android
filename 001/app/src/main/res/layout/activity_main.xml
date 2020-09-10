@@ -12,6 +12,19 @@
         android:layout_height="wrap_content"
         android:text="@string/Ui"
         android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/btn_Activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Activity"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/btn_Jump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Jump"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"/>
 
 
 </LinearLayout>
