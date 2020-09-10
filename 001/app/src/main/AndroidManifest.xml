@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".jump.BActivity"
+        <activity android:name=".fragment.ContainerActivity"></activity>
+        <activity
+            android:name=".jump.BActivity"
             android:label="B"
             android:launchMode="singleTop">
             <intent-filter>
@@ -20,10 +22,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".jump.AActivity"
+        <activity
+            android:name=".jump.AActivity"
             android:label="A"
-            android:launchMode="singleTop"
-            />
+            android:launchMode="singleTop" />
         <activity android:name=".LifeCycleActivity" />
         <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />

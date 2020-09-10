@@ -7,20 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.qchenmo.a001.fragment.ContainerActivity;
 import com.qchenmo.a001.jump.AActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button toBtn_Ui,toBtn_Activity, toBtn_Jump;
+    private Button toBtn_Ui,toBtn_Activity, toBtn_Jump, toBtn_Fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FindViewByIdClass();
+        setListeners();
+    }
+
+    private void FindViewByIdClass(){
         toBtn_Ui = findViewById(R.id.Ui);
         toBtn_Activity = findViewById(R.id.btn_Activity);
         toBtn_Jump = findViewById(R.id.btn_Jump);
-        setListeners();
+        toBtn_Fragment = findViewById(R.id.btn_Fragment);
     }
 
     private void setListeners(){
@@ -28,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         toBtn_Ui.setOnClickListener(onClick);
         toBtn_Activity.setOnClickListener(onClick);
         toBtn_Jump.setOnClickListener(onClick);
+        toBtn_Fragment.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -45,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_Jump:
                     intent = new Intent(MainActivity.this, AActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_Fragment:
+                    intent = new Intent(MainActivity.this, ContainerActivity.class);
                     startActivity(intent);
                     break;
                 default:
