@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".jump.BActivity"
-            android:label="B">
+            android:label="B"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="com.qchenmo.test.BActivity" />
 
@@ -20,7 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".jump.AActivity"
-            android:label="A"/>
+            android:label="A"
+            android:launchMode="singleTop"
+            />
         <activity android:name=".LifeCycleActivity" />
         <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />

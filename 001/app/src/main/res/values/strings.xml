@@ -73,4 +73,7 @@
     <string name="Activity">Activity</string>
     <string name="Jump">Jump</string>
     <string name="jump_toB">jumpToB</string>
+    <string name="finish">Finish</string>
+    <string name="jump_toA">Jump_toA</string>
+    <string name="BtoA">BtoA</string>
 </resources>

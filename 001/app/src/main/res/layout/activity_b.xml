@@ -10,4 +10,17 @@
         android:textColor="@color/colorBlue"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/finish"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_BtoA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/BtoA"
+        android:textAllCaps="false" />
+
 </LinearLayout>

@@ -11,5 +11,12 @@
         android:text="@string/jump_toB"
         android:textAllCaps="false"
         android:layout_marginTop="15dp" />
+    <Button
+        android:id="@+id/btn_toAActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jump_toA"
+        android:textAllCaps="false"
+        android:layout_marginTop="15dp" />
 
 </LinearLayout>
