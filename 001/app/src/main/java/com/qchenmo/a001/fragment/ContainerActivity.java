@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.qchenmo.a001.R;
 
-public class ContainerActivity extends AppCompatActivity {
+public class ContainerActivity extends AppCompatActivity implements AFragment.IOonMessageClick {
 
     //实例化
     private AFragment aFragment;
     private BFragment bFragment;
     private Button btnChange;
+    private TextView tv_getToMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +40,15 @@ public class ContainerActivity extends AppCompatActivity {
 
     private void FindViewByIdClass() {
         btnChange = findViewById(R.id.btn_change_Fragment);
+        tv_getToMsg = findViewById(R.id.getToMsg);
+    }
+
+    public void SetData(String text ){
+        tv_getToMsg.setText(text);
+    }
+
+    @Override
+    public void onClick(String string) {
+        tv_getToMsg.setText(string);
     }
 }

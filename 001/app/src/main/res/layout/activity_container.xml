@@ -5,12 +5,21 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ContainerActivity">
 
+
+    <TextView
+        android:id="@+id/getToMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dividerBlock"
+        android:textSize="20sp"
+        android:text="@string/Hello" />
     <Button
         android:id="@+id/btn_change_Fragment"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="@string/changeFragment"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:layout_below="@id/getToMsg"/>
 
     <FrameLayout
         android:id="@+id/fl_container"

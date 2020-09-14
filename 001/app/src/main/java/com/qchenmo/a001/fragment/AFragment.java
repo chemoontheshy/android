@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.qchenmo.a001.R;
@@ -21,6 +22,10 @@ public class AFragment extends Fragment {
 
     private Activity mActivity;
 
+    private Button btn_sendMsg;
+
+    private IOonMessageClick listener;
+
     //传递参数
     public static AFragment newInstance(String title) {
         AFragment fragment = new AFragment();
@@ -28,6 +33,10 @@ public class AFragment extends Fragment {
         bundle.putString("title", title);
         fragment.setArguments(bundle);
         return fragment;
+    }
+
+    public interface IOonMessageClick {
+        void onClick(String string);
     }
 
     @Nullable
@@ -43,6 +52,14 @@ public class AFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mTvAFragment = view.findViewById(R.id.tv_AFragment);
+        btn_sendMsg = view.findViewById(R.id.sendMsg);
+        btn_sendMsg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //((ContainerActivity)getActivity()).SetData("来自AFragment");
+                listener.onClick("来自AFragment的你好");
+            }
+        });
         if (getArguments() != null) {
             String string = getArguments().getString("title");
             mTvAFragment.setText(string);
@@ -57,6 +74,13 @@ public class AFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        try {
+            listener = (IOonMessageClick) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException("Activity 必须实现 IOMessageClick接口");
+
+        }
+
 
     }
 

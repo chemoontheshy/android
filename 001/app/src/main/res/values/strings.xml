@@ -83,4 +83,6 @@
     <string name="BFragment">BFragment</string>
     <string name="Fragment">Fragment</string>
     <string name="changeFragment">changeFragment</string>
+    <string name="sendMesg">sendMsg</string>
+    <string name="sendMsg">sendMsg</string>
 </resources>
