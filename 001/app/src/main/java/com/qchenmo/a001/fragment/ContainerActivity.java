@@ -10,6 +10,7 @@ import com.qchenmo.a001.R;
 
 public class ContainerActivity extends AppCompatActivity {
 
+    //实例化
     private AFragment aFragment;
     private BFragment bFragment;
     private Button btnChange;
@@ -29,9 +30,7 @@ public class ContainerActivity extends AppCompatActivity {
             }
         });
 
-        //实例化
-        aFragment = new AFragment();
-
+        aFragment = AFragment.newInstance("我是穿过去到title");
         //将Fragment添加到Activity,记得调用commit
         getSupportFragmentManager().beginTransaction().add(R.id.fl_container, aFragment).commitAllowingStateLoss();
 

@@ -1,5 +1,7 @@
 package com.qchenmo.a001.fragment;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.qchenmo.a001.R;
+import com.qchenmo.a001.jump.AActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,11 +19,22 @@ public class AFragment extends Fragment {
 
     private TextView mTvAFragment;
 
+    private Activity mActivity;
+
+    //传递参数
+    public static AFragment newInstance(String title) {
+        AFragment fragment = new AFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("title", title);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_a,container,false);
+        View view = inflater.inflate(R.layout.fragment_a, container, false);
         return view;
     }
 
@@ -29,5 +43,33 @@ public class AFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mTvAFragment = view.findViewById(R.id.tv_AFragment);
+        if (getArguments() != null) {
+            String string = getArguments().getString("title");
+            mTvAFragment.setText(string);
+        }
+//        if(getActivity()!=null){
+//            //todo
+//        }else {
+//
+//        }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //取消异步
     }
 }
