@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".fragment.ContainerActivity"></activity>
+        <activity android:name=".EventActivity"></activity>
+        <activity android:name=".fragment.ContainerActivity" />
         <activity
             android:name=".jump.BActivity"
             android:label="B"

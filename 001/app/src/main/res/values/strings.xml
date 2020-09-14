@@ -85,4 +85,7 @@
     <string name="changeFragment">changeFragment</string>
     <string name="sendMesg">sendMsg</string>
     <string name="sendMsg">sendMsg</string>
+    <string name="Event">事件机制</string>
+    <string name="click_me">click me</string>
+    <string name="my_Button">My Button</string>
 </resources>
