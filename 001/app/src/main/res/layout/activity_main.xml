@@ -39,6 +39,20 @@
         android:text="@string/Event"
         android:textAllCaps="false"
         android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/btn_Handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Handler"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/btn_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Data"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"/>
 
 
 </LinearLayout>

@@ -88,4 +88,12 @@
     <string name="Event">事件机制</string>
     <string name="click_me">click me</string>
     <string name="my_Button">My Button</string>
+    <string name="Handler">Handler</string>
+    <string name="Data">数据存储</string>
+    <string name="SharedPreferences">SharedPreferences</string>
+    <string name="File">File</string>
+    <string name="save">保存</string>
+    <string name="btn_data_show">显示</string>
+    <string name="et_data_msg">输入要保存的数据</string>
+    <string name="test_name">343</string>
 </resources>
