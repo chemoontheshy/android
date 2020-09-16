@@ -75,7 +75,8 @@ public class FileActivity extends AppCompatActivity {
         FileOutputStream fileOutputStream = null;
         try {
             //fileOutputStream = openFileOutput(mFilename, MODE_PRIVATE);
-            File dir = new File(getExternalFilesDir(null),"a001");
+            //File dir = new File(getExternalFilesDir(null),"a001");
+            File dir = new File(getDataDir(),"a001");
             if(!dir.exists()){
                 dir.mkdirs();
             }
@@ -106,7 +107,8 @@ public class FileActivity extends AppCompatActivity {
         FileInputStream fileInputStream=null;
         try {
             //fileInputStream = openFileInput(mFilename);
-            File file = new File(getExternalFilesDir(null).getAbsolutePath()+File.separator+"a001",mFilename);
+            //File file = new File(getExternalFilesDir(null).getAbsolutePath()+File.separator+"a001",mFilename);
+            File file = new File(getDataDir().getAbsolutePath()+File.separator+"a001",mFilename);
             fileInputStream = new FileInputStream(file);
             byte[] buff = new byte[1024];
             StringBuilder sb = new StringBuilder();
@@ -115,6 +117,7 @@ public class FileActivity extends AppCompatActivity {
                 sb.append(new String(buff,0,len));
 
             }
+            Log.d("test",file.getPath());
             return sb.toString();
         } catch (IOException e) {
             e.printStackTrace();
