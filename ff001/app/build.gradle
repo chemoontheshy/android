@@ -13,7 +13,16 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags ""
+                abiFilters 'arm64-v8a'
             }
+        }
+        sourceSets {
+            main{
+                jniLibs.srcDirs('src/main/cpp')
+            }
+        }
+        ndk{
+            ldLibs("llog")
         }
     }
     buildTypes {

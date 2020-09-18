@@ -4,6 +4,10 @@
 # Sets the minimum version of CMake required to build the native library.
 
 cmake_minimum_required(VERSION 3.4.1)
+#引入头文件
+include_directories(include)
+#设置ffmpeg库所在路径的变量
+set(FF ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_ANDROID_ARCH_ABI})
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -24,10 +28,28 @@ add_library( # Sets the name of the library.
 # default, you only need to specify the name of the public NDK library
 # you want to add. CMake verifies that the library exists before
 # completing its build.
+#avcodec
+add_library(avcodec SHARED IMPORTED)
+
+set_target_properties(avcodec PROPERTIES IMPORTED_LOCATION ${FF}/libavcodec.so)
+
+
+#avformat
+add_library(avformat SHARED IMPORTED)
+
+set_target_properties(avformat PROPERTIES IMPORTED_LOCATION ${FF}/libavformat.so)
+#swscale
+add_library(swscale SHARED IMPORTED)
+
+set_target_properties(swscale PROPERTIES IMPORTED_LOCATION ${FF}/libswscale.so)
+#avutil
+add_library(avutil SHARED IMPORTED)
+
+set_target_properties(avutil PROPERTIES IMPORTED_LOCATION ${FF}/libavutil.so)
 
 find_library( # Sets the name of the path variable.
         log-lib
-
+        android
         # Specifies the name of the NDK library that
         # you want CMake to locate.
         log)
@@ -38,7 +60,12 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
         native-lib
-
+        avcodec
+        avformat
+        swscale
+        avutil
+        android
+        log
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})
