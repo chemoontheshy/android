@@ -3,6 +3,7 @@ package com.qchenmo.ff001;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -23,48 +24,63 @@ public class MainActivity extends AppCompatActivity {
 
     SurfaceView surfaceView;
     SurfaceHolder surfaceHolder;
-    Button btn_play;
+    Button btn_play,btn_create_Thread,btn_mutexThread;
     TextView textView;
+
+    private ThreadDemo threadDemo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
-
-        btn_play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hello();
-            }
-        });
-        //textView.setText(hello());
-//        surfaceHolder = surfaceView.getHolder();
-//        surfaceHolder.addCallback(new SurfaceHolder.Callback() {
-//            @Override
-//            public void surfaceCreated(SurfaceHolder holder) {
-//                String inputUrl = "rtsp://192.168.1.103/11";
-//                play(inputUrl,surfaceHolder.getSurface());
-//            }
-//
-//            @Override
-//            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-//
-//            }
-//
-//            @Override
-//            public void surfaceDestroyed(SurfaceHolder holder) {
-//
-//            }
-//        });
-
-
+        findByIdClass();
+        setListenerClase();
+        initClass();
 
     }
-    private void initView(){
+    private void initClass(){
+        threadDemo = new ThreadDemo();
+        threadDemo.setOnErrorListener(new ThreadDemo.OnErrorListener() {
+            @Override
+            public void onError(int code, String msg) {
+                Log.d("onError","code is : "+code+"msg is :"+msg);
+            }
+        });
+    }
+
+    private void findByIdClass(){
         btn_play = findViewById(R.id.btn_play);
+        btn_create_Thread = findViewById(R.id.btn_create);
+        btn_mutexThread = findViewById(R.id.btn_mutexThread);
         textView = findViewById(R.id.tv_show);
         surfaceView = findViewById(R.id.surface);
     }
+
+    private void setListenerClase(){
+        OnClick onClick = new OnClick();
+        btn_play.setOnClickListener(onClick);
+        btn_create_Thread.setOnClickListener(onClick);
+        btn_mutexThread.setOnClickListener(onClick);
+    }
+
+    private class OnClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.btn_play:
+                    hello();
+                    break;
+                case R.id.btn_create:
+                    threadDemo.normalThread();
+                    break;
+                case R.id.btn_mutexThread:
+                    threadDemo.mutexThread();
+            }
+        }
+    }
+
+
 
 
     /**

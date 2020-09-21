@@ -2,6 +2,9 @@
 #include <android/log.h>
 #include <android/native_window.h>
 #include <android/native_window_jni.h>
+#include <pthread.h>
+#include <queue>
+#include <unistd.h>
 
 extern "C" {
 #include "include/libavcodec/avcodec.h"
@@ -14,6 +17,25 @@ extern "C" {
 
 }
 
+pthread_t thread;
+
+//生产者
+pthread_t produce;
+
+//消费者
+pthread_t custom;
+
+pthread_mutex_t mutex;
+
+pthread_cond_t cond;
+
+bool isExit = false;
+
+
+std::queue<int> queue;
+
+
+
 #define TAG "native" // 这个是自定义的LOG的标识
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,TAG ,__VA_ARGS__) // 定义LOGD类型
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,TAG ,__VA_ARGS__) // 定义LOGI类型
@@ -21,6 +43,43 @@ extern "C" {
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,TAG ,__VA_ARGS__) // 定义LOGE类型
 #define LOGF(...) __android_log_print(ANDROID_LOG_FATAL,TAG ,__VA_ARGS__) // 定义LOGF类型
 
+
+void *normalCallBack(void *data){
+
+    LOGD("Create normal thread from C++!");
+    pthread_exit(&thread);
+
+}
+
+void *produceCallBack(void *data){
+    while (!isExit){
+        pthread_mutex_lock(&mutex);
+        queue.push(1);
+        LOGD("生产者生产一个产品，通知消费者，产品数量为%d",queue.size());
+        pthread_cond_signal(&cond);
+        pthread_mutex_unlock(&mutex);
+        sleep(5);
+    }
+
+    pthread_exit(&produce);
+
+}
+
+void *customCallBack(void *data){
+    while (!isExit){
+        pthread_mutex_lock(&mutex);
+        if(queue.size()>0){
+            queue.pop();
+            LOGD("消费者消费产品，产品数量还剩余%d",queue.size());
+        } else{
+            LOGD("没有产品可以消费，等待中");
+            pthread_cond_wait(&cond,&mutex);
+
+        }
+        pthread_mutex_unlock(&mutex);
+        usleep(1000*500);
+    }
+}
 
 extern "C"
 JNIEXPORT jstring JNICALL
@@ -287,4 +346,24 @@ Java_com_qchenmo_ff001_MainActivity_log(JNIEnv *env, jobject thiz) {
     // TODO: implement log()
     const char *error = "I am a log test";
     LOGD("this is %s\n",error);
+}extern "C"
+JNIEXPORT void JNICALL
+Java_com_qchenmo_ff001_ThreadDemo_normalThread(JNIEnv *env, jobject thiz) {
+    // TODO: implement normalThread()
+    pthread_create(&thread, nullptr, normalCallBack, nullptr);
+}extern "C"
+JNIEXPORT void JNICALL
+Java_com_qchenmo_ff001_ThreadDemo_mutexThread(JNIEnv *env, jobject thiz) {
+    // TODO: implement mutexThread()
+
+    for (int i = 0; i <10 ; ++i) {
+
+        queue.push(i);
+
+    }
+
+    pthread_mutex_init(&mutex, nullptr);
+    pthread_cond_init(&cond, nullptr);
+    pthread_create(&produce, nullptr, produceCallBack, nullptr);
+    pthread_create(&custom, nullptr,customCallBack, nullptr);
 }
