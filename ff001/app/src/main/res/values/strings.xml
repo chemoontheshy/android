@@ -3,4 +3,5 @@
     <string name="play">播放</string>
     <string name="create_Thread">创建一般线程</string>
     <string name="mutexThread">生产者和消费者</string>
+    <string name="callJava">C++调用JAVA</string>
 </resources>

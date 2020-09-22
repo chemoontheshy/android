@@ -1,0 +1,1 @@
+JNIEXPORT jstring

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     SurfaceView surfaceView;
     SurfaceHolder surfaceHolder;
-    Button btn_play,btn_create_Thread,btn_mutexThread;
+    Button btn_play,btn_create_Thread,btn_mutexThread,btn_callJAVA;
     TextView textView;
 
     private ThreadDemo threadDemo;
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         findByIdClass();
         setListenerClase();
         initClass();
+
 
     }
     private void initClass(){
@@ -52,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
         btn_play = findViewById(R.id.btn_play);
         btn_create_Thread = findViewById(R.id.btn_create);
         btn_mutexThread = findViewById(R.id.btn_mutexThread);
+        btn_callJAVA = findViewById(R.id.btn_callJAVA);
+
         textView = findViewById(R.id.tv_show);
         surfaceView = findViewById(R.id.surface);
+
+
     }
 
     private void setListenerClase(){
@@ -61,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         btn_play.setOnClickListener(onClick);
         btn_create_Thread.setOnClickListener(onClick);
         btn_mutexThread.setOnClickListener(onClick);
+        btn_callJAVA.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -76,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_mutexThread:
                     threadDemo.mutexThread();
+                case R.id.btn_callJAVA:
+                    threadDemo.CallBackFromC();
             }
         }
     }

@@ -22,14 +22,20 @@
         android:id="@+id/btn_create"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="@string/create_Thread"/>
     <Button
         android:id="@+id/btn_mutexThread"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="@string/mutexThread"/>
+    <Button
+        android:id="@+id/btn_callJAVA"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/callJava"/>
 
     <SurfaceView
         android:id="@+id/surface"

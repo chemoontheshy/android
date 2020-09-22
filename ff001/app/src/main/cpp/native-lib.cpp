@@ -110,7 +110,7 @@ Java_com_qchenmo_ff001_MainActivity_hello(JNIEnv *env, jobject thiz) {
 
     //输入地址
     const char *rtspURL;
-    rtspURL = "rtsp://192.168.1.103/11";
+    rtspURL = "rtsp://192.168.1.106/11";
 
     //FFmpeg 2.网络配置
     avformat_network_init();
@@ -232,7 +232,7 @@ Java_com_qchenmo_ff001_MainActivity_play(JNIEnv *env, jobject thiz, jstring url,
 
     //输入地址
     const char *rtspURL;
-    rtspURL = "rtsp://192.168.1.103/11";
+    rtspURL = "rtsp://192.168.1.106/11";
 
     //FFmpeg 2.网络配置
     avformat_network_init();
@@ -366,4 +366,25 @@ Java_com_qchenmo_ff001_ThreadDemo_mutexThread(JNIEnv *env, jobject thiz) {
     pthread_cond_init(&cond, nullptr);
     pthread_create(&produce, nullptr, produceCallBack, nullptr);
     pthread_create(&custom, nullptr,customCallBack, nullptr);
+}
+
+#include "JavaListener.h"
+JavaVM *jvm;
+JavaListener *javaListener;
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_qchenmo_ff001_ThreadDemo_CallBackFromC(JNIEnv *env, jobject thiz) {
+    // TODO: implement CallBackFromC()
+    javaListener = new JavaListener(jvm,env,env->NewGlobalRef(thiz));
+    javaListener->onError(1,100,"C++call java metid from main thread ");
+}
+
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved){
+    JNIEnv *env;
+    jvm = vm;
+    if(vm->GetEnv((void **)(&env),JNI_VERSION_1_6)!=JNI_OK){
+        return -1;
+    }
+    return JNI_VERSION_1_6;
 }

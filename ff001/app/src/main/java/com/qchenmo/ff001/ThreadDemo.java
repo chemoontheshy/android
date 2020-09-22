@@ -30,4 +30,6 @@ public class ThreadDemo {
     public interface OnErrorListener{
         void onError(int code,String msg);
     }
+
+    public native void CallBackFromC();
 }

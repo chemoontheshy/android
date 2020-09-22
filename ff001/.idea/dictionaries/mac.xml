@@ -2,6 +2,7 @@
   <dictionary name="mac">
     <words>
       <w>avcodec</w>
+      <w>ljava</w>
       <w>qchenmo</w>
       <w>rtsp</w>
     </words>

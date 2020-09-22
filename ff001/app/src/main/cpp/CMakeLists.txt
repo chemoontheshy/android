@@ -6,6 +6,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 #引入头文件
 include_directories(include)
+
 #设置ffmpeg库所在路径的变量
 set(FF ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_ANDROID_ARCH_ABI})
 
@@ -21,8 +22,8 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        native-lib.cpp)
-
+        native-lib.cpp
+        JavaListener.cpp)
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
