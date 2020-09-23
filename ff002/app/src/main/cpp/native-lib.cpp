@@ -56,7 +56,7 @@ Java_com_qchenmo_ff002_WangyiPlayer_native_1start(JNIEnv *env, jobject thiz, jst
 
     //输入地址
     const char *rtspURL;
-    rtspURL = "rtsp://192.168.1.106/11";
+    rtspURL = "rtsp://192.168.1.100/11";
 
     //FFmpeg 2.网络配置
     avformat_network_init();
@@ -140,8 +140,8 @@ Java_com_qchenmo_ff002_WangyiPlayer_native_1start(JNIEnv *env, jobject thiz, jst
                 //__android_log_print(ANDROID_LOG_ERROR, "native-log","w");
                 sws_scale(img_convert_ctx, (uint8_t const *const *) iFrame->data, iFrame->linesize,
                           0, iCodecCtx->height, oFrameRGB->data, oFrameRGB->linesize);
-                num++;
-                LOGD("decode is %d\n frame",num);
+                //num++;
+                //LOGD("decode is %d\n frame",num);
                 if(ANativeWindow_lock(nativeWindow,&windowBuffer, nullptr)<0){
                     LOGD("cannot lock window");
                 } else{
