@@ -26,5 +26,12 @@
         android:onClick="play"
         android:text="@string/play"
         android:textAllCaps="false"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:onClick="Stop"
+        android:text="@string/stop"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

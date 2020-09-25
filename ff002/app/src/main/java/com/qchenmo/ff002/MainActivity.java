@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
 
     SurfaceView surfaceView;
     WangyiPlayer wangyiPlayer;
+    RitaPlayer ritaPlayer;
+    EsPlayer esPlayer;
+    String absolutePath = "rtsp://192.168.1.106/11";
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
@@ -25,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         surfaceView = findViewById(R.id.surfaceView);
 
-        wangyiPlayer = new WangyiPlayer();
-
-        wangyiPlayer.setSurfaceHolder(surfaceView);
-
+//        wangyiPlayer = new WangyiPlayer();
+//        wangyiPlayer.setSurfaceHolder(surfaceView);
+//        ritaPlayer = new RitaPlayer();
+//        ritaPlayer.setSurfaceHolder(surfaceView);
+        esPlayer = new EsPlayer();
+        esPlayer.setSurfaceView(surfaceView);
+        esPlayer.setDataSource(absolutePath);
 
     }
 
@@ -41,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
     public void play(View view) {
 
         String absolutePath = "rtsp://192.168.1.106/11";
-        wangyiPlayer.start(absolutePath);
+        //wangyiPlayer.start(absolutePath);
+        esPlayer.prepare();
+    }
+
+    public void Stop(View view) {
+        ritaPlayer.stop();
     }
 }

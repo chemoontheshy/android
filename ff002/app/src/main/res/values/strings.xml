@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ff002</string>
     <string name="play">Play</string>
+    <string name="stop">Stop</string>
 </resources>
